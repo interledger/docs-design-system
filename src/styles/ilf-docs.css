@@ -435,7 +435,6 @@ input:not([type="submit"]):not([type="file"]):focus {
 }
 
 /* Misc tweaks and overrides */
-
 .content astro-island > button[aria-expanded="false"] + div {
   margin-top: 0;
 }
@@ -445,7 +444,7 @@ input:not([type="submit"]):not([type="file"]):focus {
 }
 
 /* MathJax styles */
-.math-inline {
+.MathJax {
   display: inline-block;
   vertical-align: middle;
 }

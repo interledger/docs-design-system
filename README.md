@@ -190,6 +190,8 @@ For more information about importing things in Javascript, please refer to [impo
 
 1. #### `MermaidWrapper` component
 
+   Starlight does not support Mermaid by default, so you would have to install [remark-mermaidjs](https://github.com/remcohaszing/remark-mermaidjs) on your Starlight site before you can use this component.
+
    Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds "View full diagram" button with an external link indicator on the bottom right corner under the diagram. Note that the `client:load` attribute is required for the functionality to work because this component relies on state.
 
    To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue. Import the `MermaidWrapper` component like so:
