@@ -21,18 +21,7 @@ If you are using them in an Astro layout file, then the import would look like t
 import '/node_modules/@interledger/docs-design-system/src/styles/green-theme.css';
 ```
 
-We also have a number of documentation-specific helper components that can be imported and used where necessary.
-
-- [CodeBlock](#codeblock-component)
-- [Disclosure](#disclosure-component)
-- [Hidden](#hidden-component)
-- [LargeImg](#largeimg-component)
-- [LinkOut](#linkout-component)
-- [MermaidWrapper](#mermaidwrapper-component)
-- [StylishHeader](#stylishheader-component)
-- [Tooltip](#tooltip-component)
-
-For the shared components, if you are using both `CodeBlock` and `Disclosure` on the same page, you can import them both like so:
+We also have a number of documentation-specific helper components that can be imported and used where necessary. For these shared components, if you are using both `CodeBlock` and `Disclosure` on the same page, you can import them both like so:
 
 ```jsx
 import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
@@ -40,11 +29,11 @@ import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
 
 For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
-All the above components are documented at our [documentation style guide](https://interledger.tech).
+The available shared components are documented at our [documentation style guide](https://interledger.tech).
 
 ## Contributing
 
-As this is a shared library, it is a dependency for other projects, specifically all Interledger documentation websites. A good way to check who is using this library is via GitHub search: https://github.com/search?q=%22%40interledger%2Fdocs-design-system%22%3A+&type=code.
+As this is a shared library, it is a dependency for other projects, specifically all Interledger documentation websites. A good way to check who is using this library is via GitHub search: https://github.com/search?q=%22%40interledger%2Fdocs-design-system%22%3A+path%3Apackage.json&type=code.
 
 Our theme does override a number of Starlight defaults, therefore it is inevitable that if the Starlight internals are modified as they continue to release new features, we will have to make the corresponding updates to this library as well, to make sure nothing breaks. The documentation style guide is a good target to determine if the proposed changes you want to make to the library work correctly or not.
 

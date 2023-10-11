@@ -1,5 +1,10 @@
+---
+---
+<p><slot /></p>
+
+<style>
 @media screen and (min-width: 500px) {
-  .highlight {
+  p {
     display: inline-block;
     font-weight: bold;
     position: relative;
@@ -7,7 +12,7 @@
     font-size: var(--step-1);
   }
 
-  .highlight::after {
+  p::after {
     background-color: var(--color-accent-secondary);
     height: 8px;
     bottom: 4px;
@@ -18,3 +23,4 @@
     content: "";
   }
 }
+</style>

@@ -1,11 +1,12 @@
-import CodeBlock from "./components/CodeBlock";
-import Disclosure from "./components/Disclosure";
-import Hidden from "./components/Hidden";
-import LargeImg from "./components/LargeImg";
-import LinkOut from "./components/LinkOut";
-import MermaidWrapper from "./components/MermaidWrapper";
-import StylishHeader from "./components/StylishHeader";
-import Tooltip from "./components/Tooltip";
+// import CodeBlock from "./components/CodeBlock";
+import CodeBlock from "./components/CodeBlock.astro";
+import Disclosure from "./components/Disclosure.astro";
+import Hidden from "./components/Hidden.astro";
+import LargeImg from "./components/LargeImg.astro";
+import LinkOut from "./components/LinkOut.astro";
+import MermaidWrapper from "./components/MermaidWrapper.astro";
+import StylishHeader from "./components/StylishHeader.astro";
+import Tooltip from "./components/Tooltip.astro";
 
 export {
   CodeBlock,
