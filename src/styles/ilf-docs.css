@@ -315,6 +315,10 @@ starlight-tabs .tab [role="tab"][aria-selected] {
   text-decoration: none;
 }
 
+[data-theme="dark"] starlight-tabs [role="tab"] {
+  color: var(--sl-color-text);
+}
+
 /* Table style overrides */
 .content.content table {
   display: table;
@@ -435,7 +439,7 @@ input:not([type="submit"]):not([type="file"]):focus {
 }
 
 /* Misc tweaks and overrides */
-.content astro-island > button[aria-expanded="false"] + div {
+.content button[aria-expanded="false"] + div {
   margin-top: 0;
 }
 
@@ -447,22 +451,4 @@ input:not([type="submit"]):not([type="file"]):focus {
 .MathJax {
   display: inline-block;
   vertical-align: middle;
-}
-
-/* Can be deleted after all To-Dos are taken care of internally */
-.draft {
-  background: #f2dddd;
-  color: #aa4546;
-  padding: var(--space-s);
-  border: 2px solid #aa4546;
-}
-
-.draft h5 {
-  color: #aa4546;
-  font-size: var(--step-0);
-}
-
-.draft.draft.draft ul,
-.draft.draft.draft p {
-  margin-top: var(--space-2xs);
 }
