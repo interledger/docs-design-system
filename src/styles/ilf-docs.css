@@ -290,6 +290,13 @@ code {
   border: 1px solid var(--sl-color-hairline-light);
 }
 
+[aria-roledescription="sequence"] {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sl-shadow-sm);
+  border: 1px solid var(--sl-color-hairline-light);
+}
+
 /* Aside style overrides */
 aside.starlight-aside {
   padding: var(--space-xs) var(--space-s);
