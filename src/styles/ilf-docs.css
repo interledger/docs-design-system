@@ -48,6 +48,10 @@
   --sl-color-green-low: hsl(var(--sl-hue-green), 85%, 96%); /* lightest */
 }
 
+[data-theme="dark"] .logo-text {
+  fill: white;
+}
+
 :focus-visible {
   outline-color: var(--color-accent-mid);
   border-radius: var(--border-radius);
@@ -445,13 +449,35 @@ input:not([type="submit"]):not([type="file"]):focus {
   opacity: 0.6;
 }
 
-/* Misc tweaks and overrides */
+/* Misc tweaks, overrides and fixes */
 .content button[aria-expanded="false"] + div {
   margin-top: 0;
 }
 
 .content :is(iframe):not(:where(.not-content *)) {
   aspect-ratio: 16 / 9;
+}
+
+@media screen and (min-width: 72rem) {
+  .astro-code {
+    max-width: 48rem;
+  }
+}
+
+/* Footnote styles */
+.footnotes.footnotes.footnotes {
+  margin-top: var(--space-l);
+}
+
+.footnotes {
+  border-top: 1px dashed var(--sl-color-gray-6);
+}
+
+.footnotes {
+  ol {
+    padding-inline-start: 1.2rem;
+    font-size: var(--step--1);
+  }
 }
 
 /* MathJax styles */
