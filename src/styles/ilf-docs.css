@@ -279,7 +279,7 @@
 
 /* Rounded corners and shadow flair */
 table,
-pre,
+pre:not(.mermaid),
 .starlight-aside,
 .img-outline,
 .expressive-code {
@@ -298,8 +298,6 @@ code {
 [aria-roledescription="sequence"] {
   background-color: white;
   border-radius: var(--border-radius);
-  box-shadow: var(--sl-shadow-sm);
-  border: 1px solid var(--sl-color-hairline-light);
 }
 
 /* Aside style overrides */

@@ -1,6 +1,6 @@
 {
   "name": "@interledger/docs-design-system",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "type": "module",
   "description": "Shared styles and components used across all Interledger Starlight documentation sites",
   "exports": {
@@ -18,5 +18,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/interledger/docs-design-system"
+  },
+  "devDependencies": {
+    "mermaid": "^10.6.1"
   }
 }
