@@ -3,7 +3,7 @@ const { hasBorder = true } = Astro.props;
 ---
 <div>
   {hasBorder ? 
-    <div class="not-content border mermaid"><slot /></div> : 
+    <div class="not-content border mermaid-wrapper"><slot /></div> : 
     <div class="not-content"><slot /></div>
   }
   <button data-mermaid-button class="button">
@@ -17,9 +17,6 @@ div {
   margin-top: var(--space-m);
 }
 
-div :global(svg) {
-  background-color: white;
-}
 
 .border :global(svg) {
   border-radius: var(--border-radius);

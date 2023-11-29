@@ -1,0 +1,14 @@
+---
+interface Props {
+  graph: string;
+}
+
+const { graph } = Astro.props;
+---
+
+<pre class="mermaid" set:html={graph} />
+
+<script>
+  import mermaid from "../../node_modules/mermaid/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true });
+</script>
