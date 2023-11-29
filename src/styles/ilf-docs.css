@@ -254,26 +254,26 @@
   padding: var(--space-m) var(--space-l);
 }
 
-.content.content
+.sl-markdown-content.sl-markdown-content
   :not(a, strong, em, del, span, label, input)
   + :not(a, strong, em, del, span, label, input, :where(.not-content *)) {
   margin-top: var(--space-s);
 }
 
-.content.content
+.sl-markdown-content.sl-markdown-content
   :not(h1, h2, h3, h4, h5, h6)
   + :is(h1, h2, h3, h4, h5, h6, .heading):not(:where(.not-content *)) {
   margin-top: var(--space-m);
 }
 
-.content.content li > ul,
-.content.content li > ol,
-.content.content li + li:not(:where(.not-content *)) {
+.sl-markdown-content.sl-markdown-content li > ul,
+.sl-markdown-content.sl-markdown-content li > ol,
+.sl-markdown-content.sl-markdown-content li + li:not(:where(.not-content *)) {
   margin-top: var(--space-2xs);
 }
 
-.content.content aside + div,
-.content.content div + div {
+.sl-markdown-content.sl-markdown-content aside + div,
+.sl-markdown-content.sl-markdown-content div + div {
   margin-top: var(--space-m);
 }
 
@@ -332,7 +332,7 @@ starlight-tabs .tab [role="tab"][aria-selected] {
 }
 
 /* Table style overrides */
-.content.content table {
+.sl-markdown-content.sl-markdown-content table {
   display: table;
   width: 100%;
 }
@@ -353,48 +353,78 @@ thead tr:first-of-type th:last-of-type {
   border-top-right-radius: var(--border-radius);
 }
 
-.content thead + tbody tr:nth-child(2n):not(:where(.not-content *)) {
+.sl-markdown-content
+  thead
+  + tbody
+  tr:nth-child(2n):not(:where(.not-content *)) {
   background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
 }
 
-.content thead + tbody tr:nth-child(2n + 1):not(:where(.not-content *)) {
+.sl-markdown-content
+  thead
+  + tbody
+  tr:nth-child(2n + 1):not(:where(.not-content *)) {
   background-color: initial;
 }
 
-.content tr:nth-child(2n):not(:where(.not-content *)) {
+.sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)) {
   background-color: initial;
 }
 
-.content tr:nth-child(2n + 1):not(:where(.not-content *)) {
+.sl-markdown-content tr:nth-child(2n + 1):not(:where(.not-content *)) {
   background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
 }
 
-.content :is(th, td):not(:where(.not-content *)) {
+.sl-markdown-content :is(th, td):not(:where(.not-content *)) {
   border: 0;
   padding: var(--space-2xs) var(--space-xs);
 }
 
-.content tbody tr:first-of-type:not(:where(.not-content *)) th:first-child,
-.content tbody tr:first-of-type:not(:where(.not-content *)) td:first-child {
+.sl-markdown-content
+  tbody
+  tr:first-of-type:not(:where(.not-content *))
+  th:first-child,
+.sl-markdown-content
+  tbody
+  tr:first-of-type:not(:where(.not-content *))
+  td:first-child {
   border-top-left-radius: var(--border-radius);
 }
 
-.content tbody tr:first-of-type:not(:where(.not-content *)) th:last-child,
-.content tbody tr:first-of-type:not(:where(.not-content *)) td:last-child {
+.sl-markdown-content
+  tbody
+  tr:first-of-type:not(:where(.not-content *))
+  th:last-child,
+.sl-markdown-content
+  tbody
+  tr:first-of-type:not(:where(.not-content *))
+  td:last-child {
   border-top-right-radius: var(--border-radius);
 }
 
-.content tbody tr:last-of-type:not(:where(.not-content *)) th:first-child,
-.content tbody tr:last-of-type:not(:where(.not-content *)) td:first-child {
+.sl-markdown-content
+  tbody
+  tr:last-of-type:not(:where(.not-content *))
+  th:first-child,
+.sl-markdown-content
+  tbody
+  tr:last-of-type:not(:where(.not-content *))
+  td:first-child {
   border-bottom-left-radius: var(--border-radius);
 }
 
-.content tbody tr:last-of-type:not(:where(.not-content *)) th:last-child,
-.content tbody tr:last-of-type:not(:where(.not-content *)) td:last-child {
+.sl-markdown-content
+  tbody
+  tr:last-of-type:not(:where(.not-content *))
+  th:last-child,
+.sl-markdown-content
+  tbody
+  tr:last-of-type:not(:where(.not-content *))
+  td:last-child {
   border-bottom-right-radius: var(--border-radius);
 }
 
-.content.content pre:not(:where(.not-content *)) {
+.sl-markdown-content.sl-markdown-content pre:not(:where(.not-content *)) {
   border: 0;
   padding: var(--space-xs);
 }
@@ -451,12 +481,16 @@ input:not([type="submit"]):not([type="file"]):focus {
 }
 
 /* Misc tweaks, overrides and fixes */
-.content button[aria-expanded="false"] + div {
+.sl-markdown-content button[aria-expanded="false"] + div {
   margin-top: 0;
 }
 
-.content :is(iframe):not(:where(.not-content *)) {
+.sl-markdown-content :is(iframe):not(:where(.not-content *)) {
   aspect-ratio: 16 / 9;
+}
+
+.sl-markdown-content.sl-markdown-content .ec-line {
+  margin-top: initial;
 }
 
 @media screen and (min-width: 72rem) {
