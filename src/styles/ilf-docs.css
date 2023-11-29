@@ -281,7 +281,8 @@
 table,
 pre,
 .starlight-aside,
-.img-outline {
+.img-outline,
+.expressive-code {
   border-radius: var(--border-radius);
   box-shadow: var(--sl-shadow-sm);
 }
