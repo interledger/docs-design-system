@@ -3,19 +3,17 @@
 ::backdrop {
   /* Colors (dark mode) */
   --sl-hue-accent: 11;
-  --sl-color-accent-low: hsl(var(--sl-hue-accent), 60%, 15%); /* darkest */
-  --sl-color-accent: hsl(var(--sl-hue-accent), 99%, 41%);
+  --sl-color-accent-low: hsl(var(--sl-hue-accent), 55%, 12%); /* darkest */
+  --sl-color-accent: hsl(var(--sl-hue-accent), 98%, 41%);
   --sl-color-accent-high: hsl(var(--sl-hue-accent), 100%, 87%); /* lightest */
-  --color-accent-mid: hsl(5, 99%, 62%);
-  --color-accent-secondary: hsl(176, 92%, 25%);
+  --color-accent-highlight: hsl(176, 92%, 25%);
 }
 
 :root[data-theme="light"],
 [data-theme="light"] ::backdrop {
   /* Colours (light mode) */
-  --sl-color-accent-high: hsl(var(--sl-hue-accent), 80%, 30%); /* darkest */
-  --sl-color-accent: hsl(var(--sl-hue-accent), 100%, 40%);
+  --sl-color-accent-high: hsl(var(--sl-hue-accent), 100%, 29%); /* darkest */
+  --sl-color-accent: hsl(var(--sl-hue-accent), 98%, 41%);
   --sl-color-accent-low: hsl(var(--sl-hue-accent), 100%, 97%); /* lightest */
-  --color-accent-mid: hsl(5, 99%, 62%);
-  --color-accent-secondary: hsl(165, 90%, 78%);
+  --color-accent-highlight: hsl(165, 90%, 78%);
 }

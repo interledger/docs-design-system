@@ -53,7 +53,7 @@
 }
 
 :focus-visible {
-  outline-color: var(--color-accent-mid);
+  outline-color: var(--sl-color-accent);
   border-radius: var(--border-radius);
 }
 
@@ -87,7 +87,7 @@
 }
 
 .sidebar-content a {
-  padding: var(--space-2xs) var(--sl-sidebar-item-padding-inline);
+  padding-block: var(--space-2xs);
 }
 
 .sidebar-content summary {
@@ -216,7 +216,7 @@
   }
 
   .sl-container > h1:first-of-type::after {
-    background-color: var(--color-accent-secondary);
+    background-color: var(--color-accent-highlight);
     height: 12px;
     top: -12px;
     z-index: -1;
@@ -233,7 +233,7 @@
   }
 
   h3::after {
-    background-color: var(--color-accent-secondary);
+    background-color: var(--color-accent-highlight);
     height: 8px;
     bottom: 0px;
     z-index: -1;
@@ -462,7 +462,7 @@ label {
 }
 
 input:not([type="submit"]):not([type="file"]):not(.pagefind-ui__search-input) {
-  border: 1px solid var(--color-accent-mid);
+  border: 1px solid var(--sl-color-accent);
   padding: var(--space-3xs) var(--space-2xs);
   border-radius: var(--border-radius);
   margin-top: var(--space-3xs);
@@ -474,7 +474,7 @@ input:not([type="submit"]):not([type="file"]):focus {
 }
 
 ::placeholder {
-  color: var(--color-accent-mid);
+  color: var(--sl-color-accent-high);
   opacity: 0.6;
 }
 

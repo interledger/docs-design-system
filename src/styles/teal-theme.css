@@ -2,20 +2,18 @@
 :root,
 ::backdrop {
   /* Colors (dark mode) */
-  --sl-hue-accent: 158;
+  --sl-hue-accent: 180;
   --sl-color-accent-low: hsl(var(--sl-hue-accent), 60%, 15%); /* darkest */
-  --sl-color-accent: hsl(var(--sl-hue-accent), 100%, 25%);
+  --sl-color-accent: hsl(var(--sl-hue-accent), 100%, 23%);
   --sl-color-accent-high: hsl(var(--sl-hue-accent), 100%, 87%); /* lightest */
-  --color-accent-mid: hsl(157, 100%, 32%);
-  --color-accent-secondary: hsl(176, 92%, 25%);
+  --color-accent-highlight: hsl(176, 92%, 25%);
 }
 
 :root[data-theme="light"],
 [data-theme="light"] ::backdrop {
   /* Colours (light mode) */
-  --sl-color-accent-high: hsl(var(--sl-hue-accent), 80%, 30%); /* darkest */
-  --sl-color-accent: hsl(var(--sl-hue-accent), 100%, 25%);
+  --sl-color-accent-high: hsl(var(--sl-hue-accent), 100%, 19%); /* darkest */
+  --sl-color-accent: hsl(var(--sl-hue-accent), 100%, 23%);
   --sl-color-accent-low: hsl(var(--sl-hue-accent), 100%, 97%); /* lightest */
-  --color-accent-mid: hsl(157, 100%, 32%);
-  --color-accent-secondary: hsl(165, 90%, 78%);
+  --color-accent-highlight: hsl(165, 90%, 78%);
 }
