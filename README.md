@@ -1,13 +1,13 @@
 # Interledger documentation design system
 
-Interledger uses Starlight (powered by Astro) for all its documentation sites. We have 2 visual themes, green for specification documentation and orange for product documentation. These themes are built on top of Starlight's defaults and overrides some of the out-of-the-box styling. They are just CSS files, so use them with the path to `node_modules`. Unfortunately, we did not have enough braincells to figure out how to make it prettier than that. To use them in the `astro.config.mjs`:
+Interledger uses Starlight (powered by Astro) for all its documentation sites. We have 2 visual themes for now, teal and orange. These themes are built on top of Starlight's defaults and overrides some of the out-of-the-box styling. They are just CSS files, so use them with the path to `node_modules`. Unfortunately, we did not have enough braincells to figure out how to make it prettier than that. To use them in the `astro.config.mjs`:
 
 ```mjs
 export default defineConfig({
   integrations: [
     starlight({
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/green-theme.css",
+        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
       ],
     }),
