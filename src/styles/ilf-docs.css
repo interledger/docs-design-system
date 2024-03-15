@@ -200,7 +200,7 @@
 
   nav.sidebar .sidebar-pane {
     position: sticky;
-    height: 100vh;
+    height: calc(100vh - var(--sl-nav-height));
   }
 
   div.main-frame {
@@ -295,7 +295,7 @@ code {
   border: 1px solid var(--sl-color-hairline-light);
 }
 
-[aria-roledescription="sequence"] {
+.mermaid > svg {
   background-color: white;
   border-radius: var(--border-radius);
 }
