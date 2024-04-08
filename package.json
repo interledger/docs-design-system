@@ -1,6 +1,6 @@
 {
   "name": "@interledger/docs-design-system",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "description": "Shared styles and components used across all Interledger Starlight documentation sites",
   "exports": {

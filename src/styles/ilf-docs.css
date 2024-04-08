@@ -2,23 +2,24 @@
 :root,
 ::backdrop {
   /* Text size and line height */
-  --step--2: clamp(0.69rem, calc(0.82rem + -0.14vw), 0.79rem);
-  --step--1: clamp(0.83rem, calc(0.9rem + -0.08vw), 0.89rem);
-  --step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
-  --step-1: clamp(1.13rem, calc(1.1rem + 0.11vw), 1.2rem);
-  --step-2: clamp(1.27rem, calc(1.22rem + 0.25vw), 1.44rem);
-  --step-3: clamp(1.42rem, calc(1.34rem + 0.43vw), 1.73rem);
-  --step-4: clamp(1.6rem, calc(1.47rem + 0.67vw), 2.07rem);
-  --step-5: clamp(1.8rem, calc(1.61rem + 0.98vw), 2.49rem);
-  --space-3xs: clamp(0.25rem, calc(0.25rem + 0vw), 0.25rem);
-  --space-2xs: clamp(0.5rem, calc(0.5rem + 0vw), 0.5rem);
-  --space-xs: clamp(0.75rem, calc(0.75rem + 0vw), 0.75rem);
-  --space-s: clamp(1rem, calc(1rem + 0vw), 1rem);
-  --space-m: clamp(1.5rem, calc(1.5rem + 0vw), 1.5rem);
-  --space-l: clamp(2rem, calc(2rem + 0vw), 2rem);
-  --space-xl: clamp(3rem, calc(3rem + 0vw), 3rem);
-  --space-2xl: clamp(4rem, calc(4rem + 0vw), 4rem);
-  --space-3xl: clamp(6rem, calc(6rem + 0vw), 6rem);
+  /* @link https://utopia.fyi/type/calculator?c=300,16,1.125,1440,16,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--2: clamp(0.6944rem, 0.8153rem + -0.1343vi, 0.7901rem);
+  --step--1: clamp(0.8333rem, 0.9035rem + -0.078vi, 0.8889rem);
+  --step-0: clamp(1rem, 1rem + 0vi, 1rem);
+  --step-1: clamp(1.125rem, 1.1053rem + 0.1053vi, 1.2rem);
+  --step-2: clamp(1.2656rem, 1.2197rem + 0.2447vi, 1.44rem);
+  --step-3: clamp(1.4238rem, 1.3438rem + 0.4269vi, 1.728rem);
+  --step-4: clamp(1.6018rem, 1.4777rem + 0.6622vi, 2.0736rem);
+  --step-5: clamp(1.802rem, 1.6214rem + 0.9632vi, 2.4883rem);
+  --space-3xs: clamp(0.25rem, 0.25rem + 0vi, 0.25rem);
+  --space-2xs: clamp(0.5rem, 0.5rem + 0vi, 0.5rem);
+  --space-xs: clamp(0.75rem, 0.75rem + 0vi, 0.75rem);
+  --space-s: clamp(1rem, 1rem + 0vi, 1rem);
+  --space-m: clamp(1.5rem, 1.5rem + 0vi, 1.5rem);
+  --space-l: clamp(2rem, 2rem + 0vi, 2rem);
+  --space-xl: clamp(3rem, 3rem + 0vi, 3rem);
+  --space-2xl: clamp(4rem, 4rem + 0vi, 4rem);
+  --space-3xl: clamp(6rem, 6rem + 0vi, 6rem);
 
   --sl-text-body: var(--step-0);
   --sl-text-body-sm: var(--step--1);
@@ -245,6 +246,7 @@
 }
 
 /* Element spacing styles */
+.sl-banner + .content-panel,
 .content-panel:first-of-type {
   padding: var(--space-m) var(--space-l) 0 var(--space-l);
 }
@@ -487,14 +489,14 @@ input:not([type="submit"]):not([type="file"]):focus {
   aspect-ratio: 16 / 9;
 }
 
-.sl-markdown-content.sl-markdown-content .ec-line {
-  margin-top: initial;
-}
-
 @media screen and (min-width: 72rem) {
   .astro-code {
     max-width: 48rem;
   }
+}
+
+.codeblock .expressive-code figure.frame {
+  margin-top: initial;
 }
 
 /* Footnote styles */
