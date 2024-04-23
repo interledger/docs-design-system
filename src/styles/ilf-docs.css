@@ -281,18 +281,19 @@
 table,
 pre:not(.mermaid),
 .starlight-aside,
-.img-outline,
 .expressive-code {
   border-radius: var(--border-radius);
   box-shadow: var(--sl-shadow-sm);
 }
 
-code {
+code,
+img {
   border-radius: var(--border-radius);
 }
 
 .img-outline {
-  border: 1px solid var(--sl-color-hairline-light);
+  border: 2px solid var(--color-accent-transparent);
+  box-shadow: var(--box-shadow);
 }
 
 .mermaid > svg {
@@ -308,6 +309,14 @@ aside.starlight-aside {
 
 p.starlight-aside__title + section.starlight-aside__content {
   margin-block-start: var(--space-2xs);
+}
+
+/* Card style overrides */
+article.card {
+  border-radius: var(--border-radius);
+  border-color: var(--color-accent-transparent);
+  border-width: 2px;
+  box-shadow: var(--box-shadow);
 }
 
 /* Tab style overrides */
@@ -423,7 +432,6 @@ thead tr:first-of-type th:last-of-type {
 }
 
 .sl-markdown-content.sl-markdown-content pre:not(:where(.not-content *)) {
-  border: 0;
   padding: var(--space-xs);
 }
 
@@ -463,6 +471,10 @@ thead tr:first-of-type th:last-of-type {
 
 .codeblock .expressive-code figure.frame {
   margin-block-start: initial;
+}
+
+pre.astro-code {
+  border: 0;
 }
 
 /* Input styles */

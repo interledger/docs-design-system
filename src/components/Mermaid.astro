@@ -3,14 +3,23 @@ interface Props {
   graph: string;
 }
 
-const { graph } = Astro.props;
+const { graph, hasBorder = false } = Astro.props;
 ---
 
-<pre class="mermaid" set:html={graph} />
+{hasBorder ? <pre class="mermaid border" set:html={graph} /> : <pre class="mermaid" set:html={graph} />}
+
 
 <style>
-  pre.mermaid {
+  pre.mermaid.mermaid {
     background-color: transparent;
+    padding: 0;
+    border-color: transparent;
+  }
+
+  pre.border {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--color-accent-transparent);
   }
 </style>
 
