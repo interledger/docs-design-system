@@ -18,7 +18,7 @@ export default defineConfig({
 If you are using them in an Astro layout file, then the import would look like this for the build to not fail:
 
 ```
-import '/node_modules/@interledger/docs-design-system/src/styles/green-theme.css';
+import '/node_modules/@interledger/docs-design-system/src/styles/teal-theme.css';
 ```
 
 We also have a number of documentation-specific helper components that can be imported and used where necessary. For these shared components, if you are using both `CodeBlock` and `Disclosure` on the same page, you can import them both like so:
@@ -29,7 +29,7 @@ import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
 
 For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
-The available shared components are documented at our [documentation style guide](https://interledger.tech).
+The available shared components are documented at our [documentation style guide](https://interledger.net).
 
 ## Contributing
 
