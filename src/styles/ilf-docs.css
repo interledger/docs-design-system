@@ -95,6 +95,10 @@
   padding: var(--space-2xs) var(--sl-sidebar-item-padding-inline);
 }
 
+.sidebar-content .top-level ul summary span {
+  font-size: var(--sl-text-sm);
+}
+
 .sidebar-content [data-icon="external"]::after {
   content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path stroke="hsl(221,8%,56%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M11 1h6m0 0v6m0-6L7 11"/></svg>');
   height: 0.75em;
@@ -367,17 +371,11 @@ thead tr:first-of-type th:last-of-type {
   border-start-end-radius: var(--border-radius);
 }
 
-.sl-markdown-content
-  thead
-  + tbody
-  tr:nth-child(2n):not(:where(.not-content *)) {
+.sl-markdown-content thead + tbody tr:nth-child(2n):not(:where(.not-content *)) {
   background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
 }
 
-.sl-markdown-content
-  thead
-  + tbody
-  tr:nth-child(2n + 1):not(:where(.not-content *)) {
+.sl-markdown-content thead + tbody tr:nth-child(2n + 1):not(:where(.not-content *)) {
   background-color: initial;
 }
 
@@ -394,47 +392,23 @@ thead tr:first-of-type th:last-of-type {
   padding: var(--space-2xs) var(--space-xs);
 }
 
-.sl-markdown-content
-  tbody
-  tr:first-of-type:not(:where(.not-content *))
-  th:first-child,
-.sl-markdown-content
-  tbody
-  tr:first-of-type:not(:where(.not-content *))
-  td:first-child {
+.sl-markdown-content tbody tr:first-of-type:not(:where(.not-content *)) th:first-child,
+.sl-markdown-content tbody tr:first-of-type:not(:where(.not-content *)) td:first-child {
   border-start-start-radius: var(--border-radius);
 }
 
-.sl-markdown-content
-  tbody
-  tr:first-of-type:not(:where(.not-content *))
-  th:last-child,
-.sl-markdown-content
-  tbody
-  tr:first-of-type:not(:where(.not-content *))
-  td:last-child {
+.sl-markdown-content tbody tr:first-of-type:not(:where(.not-content *)) th:last-child,
+.sl-markdown-content tbody tr:first-of-type:not(:where(.not-content *)) td:last-child {
   border-start-end-radius: var(--border-radius);
 }
 
-.sl-markdown-content
-  tbody
-  tr:last-of-type:not(:where(.not-content *))
-  th:first-child,
-.sl-markdown-content
-  tbody
-  tr:last-of-type:not(:where(.not-content *))
-  td:first-child {
+.sl-markdown-content tbody tr:last-of-type:not(:where(.not-content *)) th:first-child,
+.sl-markdown-content tbody tr:last-of-type:not(:where(.not-content *)) td:first-child {
   border-end-start-radius: var(--border-radius);
 }
 
-.sl-markdown-content
-  tbody
-  tr:last-of-type:not(:where(.not-content *))
-  th:last-child,
-.sl-markdown-content
-  tbody
-  tr:last-of-type:not(:where(.not-content *))
-  td:last-child {
+.sl-markdown-content tbody tr:last-of-type:not(:where(.not-content *)) th:last-child,
+.sl-markdown-content tbody tr:last-of-type:not(:where(.not-content *)) td:last-child {
   border-end-end-radius: var(--border-radius);
 }
 
