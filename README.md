@@ -35,7 +35,9 @@ The available shared components are documented at our [documentation style guide
 
 As this is a shared library, it is a dependency for other projects, specifically all Interledger documentation websites. A good way to check who is using this library is via GitHub search: https://github.com/search?q=%22%40interledger%2Fdocs-design-system%22%3A+path%3Apackage.json&type=code.
 
-Our theme does override a number of Starlight defaults, therefore it is inevitable that if the Starlight internals are modified as they continue to release new features, we will have to make the corresponding updates to this library as well, to make sure nothing breaks. The documentation style guide is a good target to determine if the proposed changes you want to make to the library work correctly or not.
+Our theme does override a number of Starlight defaults, therefore it is inevitable that if the Starlight internals are modified as they continue to release new features, we will have to make the corresponding updates to this library as well, to make sure nothing breaks. The [documentation style guide](https://github.com/interledger/docs-styleguide) is a good target to determine if the proposed changes you want to make to the library work correctly or not.
+
+This documentation design system is built to target the latest version of [Starlight](https://github.com/withastro/starlight/releases) as soon as it is released. If you want to verify which version of Starlight our design system is aligned with, you can check the starlight dependency in the [package.json](https://github.com/interledger/docs-styleguide/blob/main/package.json) file for the [documentation style guide](https://github.com/interledger/docs-styleguide).
 
 The suggested workflow is as follows:
 
