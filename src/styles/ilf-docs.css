@@ -359,10 +359,6 @@ table code {
   word-break: break-all;
 }
 
-th {
-  text-align: left;
-}
-
 thead tr:first-of-type th:first-of-type {
   border-start-start-radius: var(--border-radius);
 }
@@ -389,7 +385,15 @@ thead tr:first-of-type th:last-of-type {
 
 .sl-markdown-content :is(th, td):not(:where(.not-content *)) {
   border: 0;
-  padding: var(--space-2xs) var(--space-xs);
+  padding-block: var(--space-2xs);
+}
+
+.sl-markdown-content :is(th:first-child, td:first-child):not(:where(.not-content *)) {
+  padding-inline-start: var(--space-xs);
+}
+
+.sl-markdown-content :is(th:last-child, td:last-child):not(:where(.not-content *)) {
+  padding-inline-end: var(--space-xs);
 }
 
 .sl-markdown-content tbody tr:first-of-type:not(:where(.not-content *)) th:first-child,
