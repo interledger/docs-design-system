@@ -20,6 +20,6 @@
     "url": "https://github.com/interledger/docs-design-system"
   },
   "dependencies": {
-    "mermaid": "^10.9.1"
+    "mermaid": "^11.4.0"
   }
 }
