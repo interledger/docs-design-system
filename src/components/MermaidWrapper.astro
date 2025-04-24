@@ -61,7 +61,9 @@ span::after {
     const blob = new Blob([as_text], { type: 'image/svg+xml' })
     const url = URL.createObjectURL(blob)
     const win = open(url)
-    win.onload = (evt) => URL.revokeObjectURL(url)
+    if (win) {
+      win.onload = (evt) => URL.revokeObjectURL(url);
+    }
   }
 
   const buttons = document.querySelectorAll('[data-mermaid-button]');

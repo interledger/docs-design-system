@@ -94,7 +94,7 @@ tooltips.forEach((tooltip) => {
   });
 });
 
-const buttons = document.querySelectorAll('[data-tooltip-button]');
+const buttons = document.querySelectorAll<HTMLInputElement>('[data-tooltip-button]');
 buttons.forEach((button) => {
   button.addEventListener('click', function() {
     if (this.getAttribute('aria-expanded') === 'true') {
@@ -118,7 +118,7 @@ buttons.forEach((button) => {
   });
 
   button.addEventListener('keydown', function(e) {
-    if ((e.keyCode || e.which) === 27) {
+    if (e.key === "Escape") {
       this.setAttribute('aria-expanded', 'false');
     }
   });
