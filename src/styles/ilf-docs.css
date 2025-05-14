@@ -89,6 +89,11 @@
 }
 
 /* Navigation sidebar styles */
+.toggle-left-side-bar-btn {
+  margin-block-start: var(--space-xs);
+  margin-inline-end: var(--space-xs);
+}
+
 .sidebar-content ul {
   --sl-sidebar-item-padding-inline: var(--space-s);
 }
@@ -192,6 +197,15 @@
     border-inline-start: 1px solid var(--sl-color-gray-6);
     margin-block-start: var(--space-xs);
   }
+
+  .right-sidebar .right-sidebar-panel:has(.toggle-right-side-bar-btn) {
+    margin-block-start: 0;
+    padding-block-start: var(--space-xs);
+  }
+}
+
+.toggle-right-side-bar-btn {
+  margin-block-end: var(--space-xs);
 }
 
 .right-sidebar-panel starlight-toc h2 {
@@ -505,12 +519,6 @@ input:not([type="submit"]):not([type="file"]):focus {
 
 @media screen and (min-width: 72rem) {
   .astro-code {
-    max-width: 48rem;
-  }
-}
-
-@media screen and (min-width: 80rem) {
-  .main-pane:not(.full-view) .expressive-code {
     max-width: 48rem;
   }
 }
