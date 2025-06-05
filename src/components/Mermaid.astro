@@ -6,8 +6,9 @@ interface Props {
 const { graph, hasBorder = false } = Astro.props;
 ---
 
-{hasBorder ? <pre class="mermaid border" set:html={graph} /> : <pre class="mermaid" set:html={graph} />}
-
+<pre class={hasBorder ? 'mermaid border' : 'mermaid'}>
+  {graph}
+</pre>
 
 <style>
   pre.mermaid.mermaid {
