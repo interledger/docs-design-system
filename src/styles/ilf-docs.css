@@ -329,6 +329,7 @@ img {
 .img-outline {
   border: 2px solid var(--color-accent-transparent);
   box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
 }
 
 .mermaid > svg {
