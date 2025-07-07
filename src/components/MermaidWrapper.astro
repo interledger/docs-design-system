@@ -1,13 +1,17 @@
 ---
-const { hasBorder = true } = Astro.props;
+const { hasBorder = true, diagramName="diagram" } = Astro.props;
 ---
 <div>
   {hasBorder ? 
     <div class="not-content border mermaid-wrapper"><slot /></div> : 
     <div class="not-content"><slot /></div>
   }
-  <button data-mermaid-button class="button">
+  <button data-mermaid-view class="button">
     <span>View full diagram</span>
+  </button>
+
+  <button data-mermaid-download={diagramName} class="button">
+    <span>Download diagram</span>
   </button>
 </div>
 
@@ -15,7 +19,6 @@ const { hasBorder = true } = Astro.props;
 div {
   margin-top: var(--space-m);
 }
-
 
 .border :global(svg) {
   border-radius: var(--border-radius);
@@ -29,9 +32,11 @@ button {
   border: 0;
   padding: 0;
   cursor: pointer;
+  margin-inline-end: var(--space-s);
 }
 
-.button[data-mermaid-button].button[data-mermaid-button] {
+.button[data-mermaid-view].button[data-mermaid-view],
+.button[data-mermaid-download].button[data-mermaid-download] {
   margin-top: 0;
 }
 
@@ -47,7 +52,7 @@ button:hover span {
   color: var(--sl-color-white);
 }
 
-span::after {
+[data-mermaid-view] span::after {
   content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path stroke="hsl(221,8%,56%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M11 1h6m0 0v6m0-6L7 11"/></svg>');
   height: 0.75em;
   width: 0.75em;
@@ -55,19 +60,39 @@ span::after {
 </style>
 
 <script>
-  const clickHandler = event => {
+  const viewClickHandler = event => {
     const svg = event.target.parentElement.previousElementSibling.querySelector('svg')
     const as_text = new XMLSerializer().serializeToString(svg)
     const blob = new Blob([as_text], { type: 'image/svg+xml' })
     const url = URL.createObjectURL(blob)
     const win = open(url)
     if (win) {
-      win.onload = (evt) => URL.revokeObjectURL(url);
+      win.onload = (event) => URL.revokeObjectURL(url);
     }
   }
 
-  const buttons = document.querySelectorAll('[data-mermaid-button]');
-  buttons.forEach((button) => {
-    button.addEventListener('click', clickHandler);
+  const downloadClickHandler = (event) => {
+    const svg = event.target.parentElement.previousElementSibling.previousElementSibling.querySelector('svg')
+    const as_text = new XMLSerializer().serializeToString(svg)
+    const blob = new Blob([as_text], { type: 'image/svg+xml' })
+    const url = URL.createObjectURL(blob)
+    const diagramName = event.target.parentElement.getAttribute('data-mermaid-download') || 'diagram'
+    const downloadLink = document.createElement("a")
+    downloadLink.href = url
+    downloadLink.download = `${diagramName}.svg`
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    document.body.removeChild(downloadLink)
+    URL.revokeObjectURL(url)
+  }
+
+  const viewButtons = document.querySelectorAll('[data-mermaid-view]');
+  viewButtons.forEach((viewButton) => {
+    viewButton.addEventListener('click', viewClickHandler);
+  });
+
+  const downloadButtons = document.querySelectorAll('[data-mermaid-download]');
+  downloadButtons.forEach((downloadButton) => {
+    downloadButton.addEventListener('click', downloadClickHandler);
   });
 </script>
