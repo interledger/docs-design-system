@@ -8,7 +8,6 @@ const { graph, hasBorder = false } = Astro.props;
 
 {hasBorder ? <pre class="mermaid border" set:html={graph} /> : <pre class="mermaid" set:html={graph} />}
 
-
 <style>
   pre.mermaid.mermaid {
     background-color: transparent;

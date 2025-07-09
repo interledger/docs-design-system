@@ -1,5 +1,5 @@
 ---
-const { src, alt, hasBorder = true } = Astro.props;
+const { src, alt, hasBorder = true, viewLabel="View full image" } = Astro.props;
 ---
 <div>
   {hasBorder ? <img src={src} alt={alt} class="border" /> : <img src={src} alt={alt} />}
@@ -8,7 +8,7 @@ const { src, alt, hasBorder = true } = Astro.props;
     target='_blank'
     rel='noopener noreferrer'
   >
-    View full image
+    {viewLabel}
   </a>
 </div>
 
