@@ -1,5 +1,19 @@
 ---
-const { hasBorder = true, diagramName="diagram", viewLabel="View full diagram", downloadLabel="Download diagram" } = Astro.props;
+let { hasBorder = true, diagramName="diagram", viewLabel, downloadLabel, defaultLanguage="en" } = Astro.props;
+const currentLanguage = Astro.currentLocale;
+const translations = {
+  en: {
+    viewLabel: "View full diagram", 
+    downloadLabel: "Download diagram"
+  }, 
+  es: {
+    viewLabel: "Ver diagrama completo", 
+    downloadLabel: "Descargar diagrama"
+  }
+}
+
+viewLabel ??= translations[currentLanguage]?.viewLabel ?? translations[defaultLanguage].viewLabel;
+downloadLabel ??= translations[currentLanguage]?.downloadLabel ?? translations[defaultLanguage].downloadLabel;
 ---
 <div>
   {hasBorder ? 
