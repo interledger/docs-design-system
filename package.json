@@ -17,7 +17,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/interledger/docs-design-system"
+    "url": "git+https://github.com/interledger/docs-design-system.git"
   },
   "dependencies": {
     "mermaid": "^11.12.1"
