@@ -60,3 +60,17 @@ git clone https://github.com/interledger/docs-styleguide.git
 ```
 
 3. After you're done with your changes and have tested that all is well, feel free to make a pull request and it will get reviewed, and hopefully merged into the source code. The version will get bumped and all the sites will have to make an update to their dependencies as well.
+
+### 🔍 Code Linting
+
+This project uses [ESLint](https://eslint.org/) for code linting. Before submitting a pull request, please ensure your code passes linting:
+
+1. **Fix issues**: Run `bun run format` to automatically fix linting issues
+2. **Check before pushing**: Run `bun run lint` to verify everything passes (CI will also run this)
+
+ESLint is configured to work with TypeScript and Astro files. The configuration extends recommended rules from ESLint, TypeScript ESLint, and Astro ESLint plugins.
+
+| Command          | Action             |
+| :--------------- | :----------------- |
+| `bun run format` | Fix linting issues |
+| `bun run lint`   | Check linting      |
