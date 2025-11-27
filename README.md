@@ -7,12 +7,12 @@ export default defineConfig({
   integrations: [
     starlight({
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
-        "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
-      ],
-    }),
-  ],
-});
+        './node_modules/@interledger/docs-design-system/src/styles/teal-theme.css',
+        './node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css'
+      ]
+    })
+  ]
+})
 ```
 
 If you are using them in an Astro layout file, then the import would look like this for the build to not fail:
@@ -24,7 +24,7 @@ import '/node_modules/@interledger/docs-design-system/src/styles/teal-theme.css'
 We also have a number of documentation-specific helper components that can be imported and used where necessary. For these shared components, if you are using both `CodeBlock` and `Disclosure` on the same page, you can import them both like so:
 
 ```jsx
-import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
+import { CodeBlock, Disclosure } from '@interledger/docs-design-system'
 ```
 
 For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
@@ -65,11 +65,11 @@ git clone https://github.com/interledger/docs-styleguide.git
 
 All commands are run from the root of the project, from a terminal:
 
-| Command              | Action                                           |
-| :------------------- | :----------------------------------------------- |
-| `npm install`        | Installs dependencies                            |
-| `npm run format`     | Format code and fix linting issues               |
-| `npm run lint`       | Check code formatting and linting                |
+| Command          | Action                             |
+| :--------------- | :--------------------------------- |
+| `npm install`    | Installs dependencies              |
+| `npm run format` | Format code and fix linting issues |
+| `npm run lint`   | Check code formatting and linting  |
 
 You can substitute the `npm` commands with whatever package manager your workflow uses.
 

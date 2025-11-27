@@ -1,34 +1,35 @@
 ---
-const { title, class: className } = Astro.props;
+const { title, class: className } = Astro.props
 ---
+
 <div class:list={['codeblock', className]}>
   <p>{title}</p>
   <slot />
 </div>
 
 <style>
-div {
-  position: relative;
-}
+  div {
+    position: relative;
+  }
 
-.codeblock.codeblock.codeblock :global(pre) {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  margin-top: 0;
-}
+  .codeblock.codeblock.codeblock :global(pre) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 0;
+  }
 
-.codeblock.codeblock :global(.expressive-code) {
-  margin-top: 0;
-}
+  .codeblock.codeblock :global(.expressive-code) {
+    margin-top: 0;
+  }
 
-p {
-  margin-top: var(--space-s);
-  border-top-right-radius: var(--border-radius);
-  border-top-left-radius: var(--border-radius);
-  font-size: var(--step--1);
-  font-weight: bold;
-  padding: var(--space-2xs) var(--space-xs);
-  background-color: var(--sl-color-bg-inline-code);
-  border-bottom: 1px solid var(--sl-color-gray-5);
-}
+  p {
+    margin-top: var(--space-s);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    font-size: var(--step--1);
+    font-weight: bold;
+    padding: var(--space-2xs) var(--space-xs);
+    background-color: var(--sl-color-bg-inline-code);
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
 </style>

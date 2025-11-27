@@ -1,12 +1,18 @@
 ---
 interface Props {
-  graph: string;
+  graph: string
 }
 
-const { graph, hasBorder = false } = Astro.props;
+const { graph, hasBorder = false } = Astro.props
 ---
 
-{hasBorder ? <pre class="mermaid border" set:html={graph} /> : <pre class="mermaid" set:html={graph} />}
+{
+  hasBorder ? (
+    <pre class="mermaid border" set:html={graph} />
+  ) : (
+    <pre class="mermaid" set:html={graph} />
+  )
+}
 
 <style>
   pre.mermaid.mermaid {
@@ -23,27 +29,27 @@ const { graph, hasBorder = false } = Astro.props;
 </style>
 
 <script>
-  import mermaid from "/node_modules/mermaid/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: false });
+  import mermaid from '/node_modules/mermaid/dist/mermaid.esm.min.mjs'
+  mermaid.initialize({ startOnLoad: false })
 
-  const mermaidElements = document.querySelectorAll("pre.mermaid");
+  const mermaidElements = document.querySelectorAll('pre.mermaid')
 
   function unescapeHTML(str) {
     return str
-      .replaceAll("&gt;", ">")
-      .replaceAll("&lt;", "<")
-      .replaceAll("&amp;", "&");
+      .replaceAll('&gt;', '>')
+      .replaceAll('&lt;', '<')
+      .replaceAll('&amp;', '&')
   }
 
   async function drawDiagram(mermaidElement) {
-    let graphDefinition = mermaidElement.innerHTML;
-    graphDefinition = unescapeHTML(graphDefinition);
-    const id = `graphDiv${Math.floor(Math.random() * 10000)}`;
-    const { svg } = await mermaid.render(id, graphDefinition);
-    mermaidElement.innerHTML = svg;
+    let graphDefinition = mermaidElement.innerHTML
+    graphDefinition = unescapeHTML(graphDefinition)
+    const id = `graphDiv${Math.floor(Math.random() * 10000)}`
+    const { svg } = await mermaid.render(id, graphDefinition)
+    mermaidElement.innerHTML = svg
   }
 
-  for (let mermaidElement of mermaidElements) {
-    await drawDiagram(mermaidElement);
+  for (const mermaidElement of mermaidElements) {
+    await drawDiagram(mermaidElement)
   }
 </script>
