@@ -81,7 +81,7 @@ const {
     const url = URL.createObjectURL(blob)
     const win = open(url)
     if (win) {
-      win.onload = (event) => URL.revokeObjectURL(url)
+      win.onload = () => URL.revokeObjectURL(url)
     }
   }
 
