@@ -1,30 +1,26 @@
 ---
-const { href, withIcon = true } = Astro.props;
+const { href, withIcon = true } = Astro.props
 ---
-{withIcon ? 
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <slot />
-    <span class="icon"></span>
-  </a> : 
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <slot />
-  </a>
+
+{
+  withIcon ? (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      <slot />
+      <span class="icon" />
+    </a>
+  ) : (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      <slot />
+    </a>
+  )
 }
 
 <style>
-.icon {
-  display: inline-block;
-  margin-left: var(--space-3xs);
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path stroke="hsl(221,8%,56%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M11 1h6m0 0v6m0-6L7 11"/></svg>');
-  height: 0.75em;
-  width: 0.75em;
-}
+  .icon {
+    display: inline-block;
+    margin-left: var(--space-3xs);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path stroke="hsl(221,8%,56%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M11 1h6m0 0v6m0-6L7 11"/></svg>');
+    height: 0.75em;
+    width: 0.75em;
+  }
 </style>

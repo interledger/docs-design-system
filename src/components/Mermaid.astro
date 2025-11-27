@@ -1,12 +1,18 @@
 ---
 interface Props {
-  graph: string;
+  graph: string
 }
 
-const { graph, hasBorder = false } = Astro.props;
+const { graph, hasBorder = false } = Astro.props
 ---
 
-{hasBorder ? <pre class="mermaid border" set:html={graph} /> : <pre class="mermaid" set:html={graph} />}
+{
+  hasBorder ? (
+    <pre class="mermaid border" set:html={graph} />
+  ) : (
+    <pre class="mermaid" set:html={graph} />
+  )
+}
 
 <style>
   pre.mermaid.mermaid {
@@ -23,6 +29,6 @@ const { graph, hasBorder = false } = Astro.props;
 </style>
 
 <script>
-  import mermaid from "/node_modules/mermaid/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true });
+  import mermaid from '/node_modules/mermaid/dist/mermaid.esm.min.mjs'
+  mermaid.initialize({ startOnLoad: true })
 </script>
