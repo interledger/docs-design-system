@@ -29,27 +29,6 @@ const { graph, hasBorder = false } = Astro.props
 </style>
 
 <script>
-  import mermaid from '/node_modules/mermaid/dist/mermaid.esm.min.mjs'
-  mermaid.initialize({ startOnLoad: false })
-
-  const mermaidElements = document.querySelectorAll('pre.mermaid')
-
-  function unescapeHTML(str) {
-    return str
-      .replaceAll('&gt;', '>')
-      .replaceAll('&lt;', '<')
-      .replaceAll('&amp;', '&')
-  }
-
-  async function drawDiagram(mermaidElement) {
-    let graphDefinition = mermaidElement.innerHTML
-    graphDefinition = unescapeHTML(graphDefinition)
-    const id = `graphDiv${Math.floor(Math.random() * 10000)}`
-    const { svg } = await mermaid.render(id, graphDefinition)
-    mermaidElement.innerHTML = svg
-  }
-
-  for (const mermaidElement of mermaidElements) {
-    await drawDiagram(mermaidElement)
-  }
+  import mermaid from "/node_modules/mermaid/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true });
 </script>
