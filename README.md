@@ -60,3 +60,24 @@ git clone https://github.com/interledger/docs-styleguide.git
 ```
 
 3. After you're done with your changes and have tested that all is well, feel free to make a pull request and it will get reviewed, and hopefully merged into the source code. The version will get bumped and all the sites will have to make an update to their dependencies as well.
+
+## Local development
+
+All commands are run from the root of the project, from a terminal:
+
+| Command              | Action                                           |
+| :------------------- | :----------------------------------------------- |
+| `npm install`        | Installs dependencies                            |
+| `npm run format`     | Format code and fix linting issues               |
+| `npm run lint`       | Check code formatting and linting                |
+
+You can substitute the `npm` commands with whatever package manager your workflow uses.
+
+### 🔍 Code Formatting
+
+This project uses [ESLint](https://eslint.org/) for code linting and [Prettier](https://prettier.io/) for code formatting. Before submitting a pull request, please ensure your code is properly formatted:
+
+1. **Fix issues**: Run `npm run format` to automatically format code and fix linting issues.
+2. **Check before pushing**: Run `npm run lint` to verify everything passes (CI will also run this).
+
+ESLint is configured to work with TypeScript and Astro files. The configuration extends recommended rules from ESLint, TypeScript ESLint, and Astro ESLint plugins, and integrates with Prettier to avoid conflicts.
