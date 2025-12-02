@@ -1,19 +1,13 @@
 ---
 const { href, withIcon = true } = Astro.props
+let slotContent = await Astro.slots.render('default')
+// Remove wrapping <p> tags that MDX adds
+slotContent = slotContent.replace(/^<p>(.*)<\/p>$/s, '$1').trim()
 ---
 
-{
-  withIcon ? (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <slot />
-      <span class="icon" />
-    </a>
-  ) : (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <slot />
-    </a>
-  )
-}
+<a href={href} target="_blank" rel="noopener noreferrer"
+  ><Fragment set:html={slotContent} />{withIcon && <span class="icon" />}</a
+>
 
 <style>
   .icon {
