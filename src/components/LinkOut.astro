@@ -5,7 +5,7 @@ let slotContent = await Astro.slots.render('default')
 slotContent = slotContent.replace(/^<p>(.*)<\/p>$/s, '$1').trim()
 ---
 
-<a href={href} target="_blank" rel="noopener noreferrer" class="link-out"><Fragment set:html={slotContent} />{withIcon && <span class="icon"></span>}</a>
+<a href={href} target="_blank" rel="noopener noreferrer"><Fragment set:html={slotContent} />{withIcon && <span class="icon"></span>}</a>
 
 <style>
   .link-out {
