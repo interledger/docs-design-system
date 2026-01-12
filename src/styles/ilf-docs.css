@@ -549,26 +549,25 @@ input:not([type='submit']):not([type='file']):focus {
 
 /*
  * Details/Summary Accordion Styling
- * ==================================
- * Styles <details> elements as accordion cards with a left accent border,
- * subtle shadow, and a custom arrow indicator that rotates when expanded.
- * 
- * Padding behavior:
- * - Closed: summary provides all vertical padding for symmetric spacing
- * - Open: summary bottom padding removed, container adds bottom padding
  */
 .sl-markdown-content details {
   border: 1px solid var(--sl-color-gray-5);
-  border-left: 4px solid var(--sl-color-text-accent);
+  border-left: 4px solid var(--sl-color-gray-5);
   border-radius: 6px;
   background: transparent;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   padding: 0 1rem;
 }
 
 .sl-markdown-content details:hover {
+  border-left-color: var(--sl-color-text-accent);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sl-markdown-content details:hover summary::before,
+.sl-markdown-content details[open] summary::before {
+  background-color: var(--sl-color-text);
 }
 
 /* Summary acts as clickable header with space reserved for arrow on right */
@@ -586,10 +585,10 @@ input:not([type='submit']):not([type='file']):focus {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
   width: 1.5em;
   height: 1.5em;
-  background-color: var(--sl-color-text-accent);
+  background-color: var(--sl-color-gray-5);
   mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>');
   mask-size: contain;
   mask-repeat: no-repeat;
