@@ -566,7 +566,8 @@ input:not([type='submit']):not([type='file']):focus {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 0;
+  padding: 1rem 0.75rem;
+  margin: 0 -0.75rem;
   list-style: none;
 }
 
