@@ -549,46 +549,39 @@ input:not([type='submit']):not([type='file']):focus {
 
 /*
  * Details/Summary Accordion Styling
+ * ==================================
+ * Styles <details> elements as simple accordion cards. 
  */
 .sl-markdown-content details {
   border: 1px solid var(--sl-color-gray-5);
-  border-left: 4px solid var(--sl-color-gray-5);
-  border-radius: 6px;
+  border-left: 4px solid var(--sl-color-text-accent);
+  border-radius: var(--border-radius);
   background: transparent;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   padding: 0 1rem;
 }
 
-.sl-markdown-content details:hover {
-  border-left-color: var(--sl-color-text-accent);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.sl-markdown-content details:hover summary::before,
-.sl-markdown-content details[open] summary::before {
-  background-color: var(--sl-color-text);
-}
-
-/* Summary acts as clickable header with space reserved for arrow on right */
+/* Summary acts as clickable header with flexbox for perfect alignment */
 .sl-markdown-content details summary {
   cursor: pointer;
-  position: relative;
-  padding: 1rem 2.5rem 1rem 0;
-  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  list-style: none;
 }
 
-/* Arrow indicator */
+.sl-markdown-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Arrow indicator as a flex child */
 .sl-markdown-content details summary::before {
   content: '';
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  width: 1.5em;
-  height: 1.5em;
-  background-color: var(--sl-color-gray-5);
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  background-color: var(--sl-color-text);
+  transition: transform 0.2s ease;
   mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>');
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -599,7 +592,7 @@ input:not([type='submit']):not([type='file']):focus {
 
 /* Arrow rotates 90° when expanded */
 .sl-markdown-content details[open] summary::before {
-  transform: translateY(-50%) rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Container gets bottom padding when open */
@@ -607,7 +600,7 @@ input:not([type='submit']):not([type='file']):focus {
   padding-bottom: 1rem;
 }
 
-/* Summary loses bottom padding when open so content sits directly below */
+/* Summary maintains its padding for centering, but pulls content up */
 .sl-markdown-content details[open] summary {
-  padding-bottom: 0;
+  margin-bottom: -1rem;
 }
