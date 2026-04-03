@@ -265,13 +265,13 @@
     content: '';
   }
 
-  h3 {
+  .sl-container h3 {
     display: inline-block;
     position: relative;
     color: var(--sl-color-white);
   }
 
-  h3::after {
+  .sl-container h3::after {
     background-color: var(--color-accent-highlight);
     height: 8px;
     bottom: 0px;
