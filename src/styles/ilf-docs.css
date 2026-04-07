@@ -488,12 +488,12 @@ pre.astro-code {
   border: 0;
 }
 
-/* Input styles */
-label {
+/* Input styles — scoped to .sl-container to prevent leaking to non-Starlight pages */
+.sl-container label {
   font-size: var(--sl-text-body-sm);
 }
 
-input:not([type='submit']):not([type='file']):not(.pagefind-ui__search-input) {
+.sl-container input:not([type='submit']):not([type='file']):not(.pagefind-ui__search-input) {
   border: 1px solid var(--sl-color-accent);
   padding: var(--space-3xs) var(--space-2xs);
   border-radius: var(--border-radius);
@@ -501,11 +501,11 @@ input:not([type='submit']):not([type='file']):not(.pagefind-ui__search-input) {
   font-size: var(--sl-text-body);
 }
 
-input:not([type='submit']):not([type='file']):focus {
+.sl-container input:not([type='submit']):not([type='file']):focus {
   background-color: var(--sl-color-accent-low);
 }
 
-::placeholder {
+.sl-container ::placeholder {
   color: var(--sl-color-accent-high);
   opacity: 0.6;
 }
