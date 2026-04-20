@@ -65,19 +65,17 @@ git clone https://github.com/interledger/docs-styleguide.git
 
 All commands are run from the root of the project, from a terminal:
 
-| Command          | Action                             |
-| :--------------- | :--------------------------------- |
-| `npm install`    | Installs dependencies              |
-| `npm run format` | Format code and fix linting issues |
-| `npm run lint`   | Check code formatting and linting  |
-
-You can substitute the `npm` commands with whatever package manager your workflow uses.
+| Command           | Action                             |
+| :---------------- | :--------------------------------- |
+| `pnpm install`    | Installs dependencies              |
+| `pnpm run format` | Format code and fix linting issues |
+| `pnpm run lint`   | Check code formatting and linting  |
 
 ### 🔍 Code Formatting
 
 This project uses [ESLint](https://eslint.org/) for code linting and [Prettier](https://prettier.io/) for code formatting. Before submitting a pull request, please ensure your code is properly formatted:
 
-1. **Fix issues**: Run `npm run format` to automatically format code and fix linting issues.
-2. **Check before pushing**: Run `npm run lint` to verify everything passes (CI will also run this).
+1. **Fix issues**: Run `pnpm run format` to automatically format code and fix linting issues.
+2. **Check before pushing**: Run `pnpm run lint` to verify everything passes (CI will also run this).
 
 ESLint is configured to work with TypeScript and Astro files. The configuration extends recommended rules from ESLint, TypeScript ESLint, and Astro ESLint plugins, and integrates with Prettier to avoid conflicts.
