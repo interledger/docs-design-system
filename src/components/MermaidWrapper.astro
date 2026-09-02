@@ -74,8 +74,7 @@ const {
 
 <script>
   const viewClickHandler = (event) => {
-    const svg =
-      event.target.parentElement.previousElementSibling.querySelector('svg')
+    const svg = event.currentTarget.previousElementSibling.querySelector('svg')
     const as_text = new XMLSerializer().serializeToString(svg)
     const blob = new Blob([as_text], { type: 'image/svg+xml' })
     const url = URL.createObjectURL(blob)
@@ -87,15 +86,14 @@ const {
 
   const downloadClickHandler = (event) => {
     const svg =
-      event.target.parentElement.previousElementSibling.previousElementSibling.querySelector(
+      event.currentTarget.previousElementSibling.previousElementSibling.querySelector(
         'svg'
       )
     const as_text = new XMLSerializer().serializeToString(svg)
     const blob = new Blob([as_text], { type: 'image/svg+xml' })
     const url = URL.createObjectURL(blob)
     const diagramName =
-      event.target.parentElement.getAttribute('data-mermaid-download') ||
-      'diagram'
+      event.currentTarget.getAttribute('data-mermaid-download') || 'diagram'
     const downloadLink = document.createElement('a')
     downloadLink.href = url
     downloadLink.download = `${diagramName}.svg`
