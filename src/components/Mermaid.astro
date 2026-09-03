@@ -1,6 +1,7 @@
 ---
 interface Props {
   graph: string
+  hasBorder?: boolean
 }
 
 const { graph, hasBorder = false } = Astro.props
@@ -29,6 +30,6 @@ const { graph, hasBorder = false } = Astro.props
 </style>
 
 <script>
-  import mermaid from '/node_modules/mermaid/dist/mermaid.esm.min.mjs'
+  import mermaid from 'mermaid'
   mermaid.initialize({ startOnLoad: true })
 </script>
