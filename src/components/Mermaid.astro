@@ -30,6 +30,13 @@ const { graph, hasBorder = false } = Astro.props
 </style>
 
 <script>
-  import mermaid from 'mermaid'
+  // Import the pre-bundled ESM build, not the bare `mermaid` specifier.
+  // The bare specifier resolves to `dist/mermaid.core.mjs`, which imports
+  // dayjs and other CommonJS packages as externals. A bundler fixes that
+  // interop at build time, but the Vite dev server does not, so the module
+  // throws "does not provide an export named 'default'" and no diagram
+  // renders. The `.esm.min.mjs` build has those dependencies inlined and
+  // works in both dev and production.
+  import mermaid from 'mermaid/dist/mermaid.esm.min.mjs'
   mermaid.initialize({ startOnLoad: true })
 </script>
