@@ -124,6 +124,10 @@
   height: 0.75em;
   width: 0.75em;
   display: inline-block;
+  /* Declare the gap. It used to come from a whitespace text node in the
+   * Starlight markup, which rendered as a word space. Astro 7 removes that
+   * node, and the icon then touches the last letter of the link. */
+  margin-inline-start: 0.25em;
 }
 
 .sidebar-content a[aria-current='page'],
