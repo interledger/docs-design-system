@@ -12,7 +12,9 @@ const uuid = crypto.randomUUID()
   {toggleText}
 </button>
 <div class="wrapper" id={uuid}>
-  <div class="content"><slot /></div>
+  <div class="content">
+    <slot />
+  </div>
 </div>
 
 <style>
