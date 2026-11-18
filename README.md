@@ -4,6 +4,8 @@ Interledger uses Starlight (powered by Astro) for all its documentation sites. W
 
 ```mjs
 export default defineConfig({
+  // Required: keep Astro's scoped styles on the `where` strategy (see below)
+  scopedStyleStrategy: 'where',
   integrations: [
     starlight({
       customCss: [
@@ -14,6 +16,8 @@ export default defineConfig({
   ]
 })
 ```
+
+**Set `scopedStyleStrategy: 'where'` in every site that uses this design system.** Up to version 0.42, Starlight forced this setting. From Starlight 0.43 it uses Astro's default, `'attribute'`. Under that default, a component's scoped styles no longer reach the elements of a child component that only applies the `class` prop it receives, such as a logo component inside a custom `Header`. Those styles stop applying without any error. Our sites, and this design system's `CodeBlock` component, were built for `'where'`, so set it explicitly. See the [Starlight 0.43.0 changelog](https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md#0430) and Astro's [`scopedStyleStrategy` reference](https://docs.astro.build/en/reference/configuration-reference/#scopedstylestrategy).
 
 If you are using them in an Astro layout file, then the import would look like this for the build to not fail:
 
