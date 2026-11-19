@@ -4,6 +4,8 @@ Interledger uses Starlight (powered by Astro) for all its documentation sites. W
 
 ```mjs
 export default defineConfig({
+  // Required: keep Astro's scoped styles on the `where` strategy (see below)
+  scopedStyleStrategy: 'where',
   integrations: [
     starlight({
       customCss: [
@@ -14,6 +16,10 @@ export default defineConfig({
   ]
 })
 ```
+
+**Set `scopedStyleStrategy: 'where'` in every site that uses this design system.** Up to version 0.42, Starlight forced this setting. From Starlight 0.43 it uses Astro's default, `'attribute'`. Under that default, a component's scoped styles no longer reach the elements of a child component that only applies the `class` prop it receives, such as a logo component inside a custom `Header`. Those styles stop applying without any error. Our sites, and this design system's `CodeBlock` component, were built for `'where'`, so set it explicitly. See the [Starlight 0.43.0 changelog](https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md#0430) and Astro's [`scopedStyleStrategy` reference](https://docs.astro.build/en/reference/configuration-reference/#scopedstylestrategy).
+
+**Use Node.js 22.12.0 or later.** This design system depends on Mermaid 12, which requires Node 22.12.0+. On Node 20, or on Node 22 before 22.12, installing shows an engine warning, and the install fails if `engine-strict` is on. Sites on Astro 7.4.2 or later need Node 22.23.4+ anyway. If you pin an exact Node version in `.nvmrc`, CI or your hosting settings, make sure it's at least 22.12.0.
 
 If you are using them in an Astro layout file, then the import would look like this for the build to not fail:
 
@@ -62,6 +68,8 @@ git clone https://github.com/interledger/docs-styleguide.git
 3. After you're done with your changes and have tested that all is well, feel free to make a pull request and it will get reviewed, and hopefully merged into the source code. The version will get bumped and all the sites will have to make an update to their dependencies as well.
 
 ## Local development
+
+To work on this repo, use Node.js 22.23.4 or later: Astro, one of the dev dependencies, requires it. The repo's `.npmrc` sets `engine-strict=true`, so `pnpm install` fails on older versions.
 
 All commands are run from the root of the project, from a terminal:
 

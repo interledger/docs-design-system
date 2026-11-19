@@ -8,17 +8,15 @@ const {
 ---
 
 <div>
-  {
-    hasBorder ? (
-      <div class="not-content border mermaid-wrapper">
-        <slot />
-      </div>
-    ) : (
-      <div class="not-content">
-        <slot />
-      </div>
-    )
-  }
+  {hasBorder ? (
+    <div class="not-content border mermaid-wrapper">
+      <slot />
+    </div>
+  ) : (
+    <div class="not-content">
+      <slot />
+    </div>
+  )}
   <button data-mermaid-view class="button">
     <span>{viewLabel}</span>
   </button>

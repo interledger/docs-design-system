@@ -8,13 +8,11 @@ const {
 ---
 
 <div>
-  {
-    hasBorder ? (
-      <img src={src} alt={alt} class="border" />
-    ) : (
-      <img src={src} alt={alt} />
-    )
-  }
+  {hasBorder ? (
+    <img src={src} alt={alt} class="border" />
+  ) : (
+    <img src={src} alt={alt} />
+  )}
   <a href={src} target="_blank" rel="noopener noreferrer">
     {viewLabel}
   </a>
